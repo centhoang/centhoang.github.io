@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HandyDrive: park and sync folders on Google Drive</title>
+<meta name="description" content="HandyDrive is a Windows tool that parks git repos and syncs any file or folder to your own Google Drive as an encrypted backup, so you can free up disk space and bring everything back later.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="favicon.svg" alt="" width="28" height="28">HandyDrive</a>
+    <nav aria-label="Main">
+      <a href="#what">What it does</a>
+      <a href="#google">Google account access</a>
+      <a href="#availability">Availability</a>
+      <a href="privacy.html">Privacy policy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="hero">
+      <h1>Free up disk space without losing anything.</h1>
+      <p class="lead">HandyDrive is a Windows tool that moves big folders and git repos to <strong>your own Google Drive</strong>, encrypted, and brings them back to the same place when you need them.</p>
+      <div class="actions">
+        <a class="btn" href="privacy.html">Privacy policy</a>
+        <a class="btn secondary" href="#google">How it uses your Google account</a>
+      </div>
+      <p class="note">Windows 10 and 11. It runs entirely on your PC: there is no HandyDrive server or account, and the developer never receives your files or data.</p>
+    </div>
+
+    <section id="what">
+      <h2>What it does</h2>
+      <p>HandyDrive stores what you give it in an encrypted, deduplicated repository inside your Google Drive, so uploading again only sends what changed.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Park a git repo</h3>
+          <p>Checks that nothing would be lost (everything committed and pushed), uploads the git-ignored files, verifies the upload, then deletes the folder to free the space. <code>hgd unpark</code> clones the repo back and restores the ignored files to the same path.</p>
+        </div>
+        <div class="card">
+          <h3>Sync any file or folder</h3>
+          <p>Upload a file or folder from anywhere, free its space (keep it cloud-only), restore it, or stop syncing. Explorer shows a small icon on each synced item and a right-click <strong>HandyDrive</strong> menu offers what applies.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2>Built to be careful with your data</h2>
+      <ul>
+        <li><strong>Encrypted before upload.</strong> Your files are encrypted on your PC with a key only you hold. Google stores unreadable data.</li>
+        <li><strong>Verified before delete.</strong> Nothing is removed from your disk until the uploaded copy has been checked against it.</li>
+        <li><strong>Cloud-only items never download on open.</strong> A freed item is an empty file or folder until you restore it.</li>
+        <li><strong>Deletes are permanent.</strong> When you remove something from the cloud, it doesn't linger in the Drive trash, so the space comes back at once.</li>
+      </ul>
+    </section>
+
+    <section id="google">
+      <h2>How HandyDrive uses your Google account</h2>
+      <p>HandyDrive asks for one permission, <code>https://www.googleapis.com/auth/drive.file</code>. With it, the app can only see and change files that <em>it</em> created in your Drive. It cannot read your other files, and it does not request your name, email address, contacts or any other profile data.</p>
+      <p>It uses that access only to store and retrieve the data you choose to park or sync: an encrypted storage folder and a small readable text note per item, all inside a <code>HandyDrive</code> folder in My Drive. Your data goes only to your Google Drive; nothing is shared, sold or used for advertising.</p>
+      <p>The full details, including what each note contains and how to remove everything, are in the <a href="privacy.html">privacy policy</a>.</p>
+    </section>
+
+    <section id="availability">
+      <h2>Availability</h2>
+      <p>HandyDrive is a personal project and isn't distributed publicly at the moment. It is set up by connecting it to a Google Cloud OAuth client and a Google account that belong to the person using it, so the app is always tied to that person's own project and Drive.</p>
+      <p>Setup signs in with Google and creates a <strong>recovery key</strong> that only the user holds. Without it, the encrypted data in Drive can't be read, by the user or anyone else.</p>
+      <p>Questions about this page or the privacy policy are welcome as <a href="https://github.com/centhoang/centhoang.github.io/issues">GitHub issues</a>.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><a href="privacy.html">Privacy policy</a> · <a href="https://github.com/centhoang/centhoang.github.io/issues">Contact</a></p>
+    <p>HandyDrive is an independent project. It is not affiliated with, endorsed by or sponsored by Google. Google Drive is a trademark of Google LLC.</p>
+  </div>
+</footer>
+
+</body>
+</html>
